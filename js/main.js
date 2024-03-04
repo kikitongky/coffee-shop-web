@@ -49,40 +49,54 @@ window.addEventListener('scroll', scrollUp);
 
 //=========  FILTER CARD by categori   ============\\
 
-const categoryLink = document.querySelectorAll('.product__item');
-
-// Active Product
+const categoryLinks = document.querySelectorAll('.product__item');
 
 function activeProduct(){
-    categoryLink.forEach(a => a.classList.remove('active__product'))
-    this.classList.add('active__product')
+    categoryLinks.forEach(link => link.classList.remove('active__product'));
+    this.classList.add('active__product');
 }
-
-categoryLink.forEach(a => a.addEventListener('click', activeProduct))
-
-
-// showing card with filter
-categoryLink.forEach(link => {
-    link.addEventListener('click', function(e){
-        e.preventDefault();
-
-        const selectedCategory = this.getAttribute('data-category');
-
-        filtersCardByCategory(selectedCategory);
-    })
-})
-
-// card by category
-
 function filtersCardByCategory(category){
     const cards = document.querySelectorAll('.product__card');
 
     cards.forEach(card => {
-
-        if(category === 'all' || card.classList.contains(category)){
-            card.style.display = 'block';
-        }else{
-            card.style.display = 'none';
-        }
+        card.style.display = (category === 'all' || card.classList.contains(category)) ? 'block' : 'none';
     })
 };
+
+categoryLinks.forEach(link => {
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+        const selectedCategory = this.getAttribute('data-category');
+        activeProduct.call(this);
+        filtersCardByCategory(selectedCategory);
+    });
+});
+
+
+
+// ========= ACTIVE LINK ======
+
+const sections = document.querySelectorAll('section[id]')
+    
+const scrollActive = () =>{
+  	const scrollDown = window.scrollY
+
+	sections.forEach(current =>{
+		const sectionHeight = current.offsetHeight,
+			  sectionTop = current.offsetTop - 58,
+			  sectionId = current.getAttribute('id'),
+			  sectionsClass = document.querySelector('.nav__menu a[href*="' + sectionId + '"]')
+
+		if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
+			sectionsClass.classList.add('active-link')
+		}else{
+			sectionsClass.classList.remove('active-link')
+		}                                     
+	})
+    if (scrollDown + window.innerHeight >= document.body.offsetHeight - footer.offsetHeight){
+        document.querySelector('.nav__menu a[href="#footer"]').classList.add('active-link')
+    }else{
+        document.querySelector('.nav__menu a[href="#footer"]').classList.remove('active-link')
+    }
+}
+window.addEventListener('scroll', scrollActive);
