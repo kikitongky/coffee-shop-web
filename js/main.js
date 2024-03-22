@@ -1,6 +1,6 @@
 // Show Menu
 const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
+      navToggle = document.getElementById('nav-toggle-menu'),
       navClose = document.getElementById('nav-close')
 
 /* Menu show */

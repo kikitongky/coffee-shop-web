@@ -14,7 +14,7 @@
 
     <!-- MYCSS -->
     <link rel="stylesheet" href="css/style.css" />
-    <title>Coffee Shop Web</title>
+    <title>CoffeeDist</title>
   </head>
   <body>
     <!-- LOADER -->
@@ -24,7 +24,7 @@
       <nav class="nav container">
         <a href="#" class="nav__logo">
           <img src="asset/coffee-icon.png" class="nav__logo-img" />
-          CoffeeDay
+          CoffeeDist
         </a>
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
@@ -35,21 +35,32 @@
                     <a href="#product" class="nav__link">Product</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#premium" class="nav__link">Premium</a>
+                    <a href="#about" class="nav__link">About Us</a>
                 </li>
                 <li class="nav__item">
                     <a href="#footer" class="nav__link">Contact Us</a>
                 </li>
+                <div class="nav__toggle-cart-li" id="nav-toggle-cart">
+                    <i class='bx bx-cart'></i>
+                </div>
             </ul>
+            
             <div class="nav__close" id="nav-close">
                 <i class='bx bx-x'></i>
             </div>
         </div>
 
+        <!-- Nav Toggle --> 
+        
+        <div class="nav__toggle">
+            <div class="nav__toggle-cart" id="nav-toggle-cart">
+                <i class='bx bx-cart'></i>
+            </div>
 
-        <!-- Nav Toggle -->
-        <div class="nav__toggle" id="nav-toggle">
-            <i class='bx bx-grid-alt'></i>
+            <div class="nav__toggle-menu" id="nav-toggle-menu" >
+                <i class='bx bx-grid-alt'></i>
+            </div>
+           
         </div>
       </nav>
     </header>
@@ -61,7 +72,7 @@
             <div class="home__container">
                 <div class="home__content container">
                     <h1 class="home__title">
-                        Explore <span>Coffee Excelence</span> with Experience Distributors <span>.</span>
+                        Explore <span>Coffee Excelence</span> with Experience Distributors<span>.</span>
                     </h1>
                     <p class="home__description">Direct from <span>Indonesian farms</span>, for the best <span>Indonesian coffee beans</span></p>
     
@@ -85,7 +96,7 @@
                     </div>
     
                     <a href="#speciality">
-                        <img src="asset/scroll-anim.png" alt="" class="home__scroll">
+                        <img src="asset/scroll.png" alt="" class="home__scroll">
                     </a>
     
                 </div>
@@ -99,7 +110,7 @@
                     <h2 class="section__title section__title-speciality">
                         Prime Beans, Prime Delivery: Your Coffee's Finest Journey!
                     </h2>
-                    <a href="#" class="button speciality__button">See more</a>
+                    <!-- <a href="#" class="button speciality__button">See more</a> -->
                 </div>
                 <div class="speciality__category">
                     <div class="speciality__group speciality__line">
@@ -130,7 +141,7 @@
         </div>
             
             <!--Section PRODUCT -->
-        <section class="product section" id="#product">
+        <section class="product section" id="product">
             <div class="product__container container">
                 <h2 class="section__title">
                     Chose our delicious and best product.
@@ -283,32 +294,35 @@
         </section>
     
             <!--Section CAFE SHOP -->
-        <section class="quality section" id="premium">
-            <div class="quality__container container">
+        <section class="about section" id="about">
+            <div class="about__container container">
                 <h2 class="section__title">
-                    A comfortable coffee shop with the most complete coffee beans.
+                    Empowerment programs - Our contributted to Indonesian coffee industry 
                 </h2>
     
-                <div class="quality__content grid">
-                    <div class="quality__images">
-                        <img src="asset/hero.jpg" alt="" class="quality__img-big">
-                        <img src="asset/quality-small.jpg" alt="" class="quality__img-small">
+                <div class="about__content grid">
+                    <div class="about__images">
+                        <img src="asset/about.jpg" alt="" class="about__img-big">
+                        <img src="asset/about-sm.jpg" alt="" class="about__img-small">
                     </div>
     
-                    <div class="quality__data">
-                        <h1 class="quality__title">Premium Coffee</h1>
-                        <h2 class="quality__title">$24.55</h2>
-                        <span class="quality__special">Special Price</span>
-                        <p class="quality__description">We are delighted with our coffee. That's why you get the best premium coffee plus the kettle made resistant materials for special price.</p>
+                    <div class="about__data">
+                        <h1 class="about__title">Indo CoffeeDist</h1>
+                        <span class="about__subtitle">"Empowerment is not about giving people power. it's about unleashing the power they already have within them."</span>
+                        <p class="about__description">
+                            <span>Our mission</span> is being a premier distributor of Indonesian coffee, with committed to bringing you the finest coffee beans more than just a delicious flavor. By prioritizing direct relationships with farmers, we not only provide the highest quality coffee beans but also strengthen local coffee farming communities. <br><br>
+
+                            Moreover, we open doors for coffee entrepreneurs and baristas to thrive through innovative scholarship and industry development programs. Just because we aim to not only deliver exceptional coffee, but also contribute to the growth and sustainability of the Indonesian coffee industry and uplift local communities. Everyone can join our program!  
+                        </p>
     
-                        <div class="quality__buttons">
-                            <button class="button">
-                                Buy Now
-                                <i class='bx bxs-shopping-bag'></i>
-                            </button>
+                        <div class="about__buttons">
+                            <a href="mailto:coffe-dist@example.com" class="about__button-contact button">
+                                Contact Us
+                                <i class='bx bxs-envelope'></i>
+                            </a>
     
-                            <a href="#product" class="quality__button">
-                                See more
+                            <a href="#product" class="about__button">
+                                Read more
                                 <i class='bx bx-right-arrow-alt'></i>
                             </a>
                         </div>
@@ -332,13 +346,13 @@
     <footer class="footer" id="footer">
         <div class="footer__container container">
             
-            <h1 class="footer__title"><img src="asset/coffee-icon.png" alt="" class="footer__icon">CoffeeDay</h1>
+            <h1 class="footer__title"><img src="asset/coffee-icon.png" alt="" class="footer__icon">CoffeeDist</h1>
 
             <div class="footer__content grid">
 
                 <div class="footer__data">
                     <p class="footer__description">
-                        Subscribe to our newsletter
+                        Have an intersted industry of coffee? <br> Subscribe to get info our program
                     </p>
                     <div class="footer__newsletter">
                         <input type="email" placeholder="Your email address" class="footer__input">
@@ -360,14 +374,14 @@
                     <h2 class="footer__subtitle">Contact Us</h2>
                     <p class="footer__information">
                         +62 855-1234-1234 <br>
-                        coffee-day@gmail.com
+                        coffee-dist@gmail.com
                     </p>
                 </div>
 
                 <div class="footer__data">
                     <h2 class="footer__subtitle">Open</h2>
                     <p class="footer__information">
-                        Monday - Sunday <br>
+                        Monday - Saturday <br>
                         06:00 AM - 10:00 PM
                     </p>
                 </div>
@@ -396,6 +410,58 @@
     <a href="#" class="scrollup" id="scroll-up">
         <i class='bx bxs-up-arrow-alt'></i>
     </a>
+
+    <div class="cart">
+        <div class="cart__content">
+
+            <h1 class="cart__tittle">
+                CART
+            </h1>
+            <ul class="cart__data">
+                
+                <li class="cart__list">
+                    <div class="cart__list-img">
+                        <img src="asset/product1.jpg" />
+                    </div>
+
+                    <div class="cart__list-data">
+                        <h3 class="cart__list-name">
+                            Coffee Beans
+                        </h3>
+                        <div class="cart__list-qty">
+                            <button class="cart__qty-btn">-</button>
+                            <span>X 1</span>
+                            <button class="cart__qty-btn">+</button>
+                        </div>
+                        <span class="cart__list-price">RP 15.000</span>
+                    </div>
+                </li>
+                <li class="cart__list">
+                    <div class="cart__list-img">
+                        <img src="asset/product1.jpg" />
+                    </div>
+
+                    <div class="cart__list-data">
+                        <h3 class="cart__list-name">
+                            Coffee Beans
+                        </h3>
+                        <div class="cart__list-qty">
+                            <button class="cart__qty-btn">-</button>
+                            <span>X 1</span>
+                            <button class="cart__qty-btn">+</button>
+                        </div>
+                        <span class="cart__list-price">RP 15.000</span>
+                    </div>
+                </li>
+                
+            </ul>
+
+            <h3 class="cart__total">Total: <br> <span>RP 30.000,-</span></h3>
+            <button class="cart__button button">
+                Check Out
+            </button>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
   </body>
