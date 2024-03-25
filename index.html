@@ -14,10 +14,11 @@
 
     <!-- MYCSS -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- AlpineJS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>CoffeeDist</title>
   </head>
   <body>
-    <!-- LOADER -->
 
     <!-- HEADER -->
     <header class="header" id="header">
@@ -141,7 +142,7 @@
         </div>
             
             <!--Section PRODUCT -->
-        <section class="product section" id="product">
+        <section class="product section" id="product" x-data="products">
             <div class="product__container container">
                 <h2 class="section__title">
                     Chose our delicious and best product.
@@ -175,125 +176,27 @@
                 </ul>
     
                 <div class="product__content grid">
-                    <!-- ARABICA COFFEE -->
-                    <article class="product__card arabica all">
-                        <div class="product__shape">
-                            <img src="asset/product1.jpg" alt="" class="product__img">
-                        </div>
-                        <div class="product__data">
-                            <h2 class="product__price">$5</h2>
-                            <h3 class="product__name">Gayo Coffee</h3>
-    
-                            <button class="button product__button">
-                                <i class='bx bxs-shopping-bag'></i>
-                            </button>
-                        </div>
-                    </article>
-                    <article class="product__card arabica all">
-                        <div class="product__shape">
-                            <img src="asset/product2.jpg" alt="" class="product__img">
-                        </div>
-                        <div class="product__data">
-                            <h2 class="product__price">$5</h2>
-                            <h3 class="product__name">Toraja Coffee</h3>
-    
-                            <button class="button product__button">
-                                <i class='bx bxs-shopping-bag'></i>
-                            </button>
-                        </div>
-                    </article>
-                    <article class="product__card arabica all">
-                        <div class="product__shape">
-                            <img src="asset/product3.jpg" alt="" class="product__img">
-                        </div>
-                        <div class="product__data">
-                            <h2 class="product__price">$8</h2>
-                            <h3 class="product__name">Sidikalang Coffee</h3>
-    
-                            <button class="button product__button"><i class='bx bxs-shopping-bag'></i></button>
-                        </div>
-                    </article>
-                    
-    
-                    <!-- ROBUSTA COFFEE -->
-                    <article class="product__card robusta all">
-                        <div class="product__shape">
-                            <img src="asset/product4.jpg" alt="" class="product__img">
-                        </div>
-                        <div class="product__data">
-                            <h2 class="product__price">$3.24</h2>
-                            <h3 class="product__name">Lampung Coffee</h3>
-    
-                            <button class="button product__button"><i class='bx bxs-shopping-bag'></i></button>
-                        </div>
-                    </article>
-                    <article class="product__card robusta all">
-                        <div class="product__shape">
-                            <img src="asset/product5.jpg" alt="" class="product__img">
-                        </div>
-                        <div class="product__data">
-                            <h2 class="product__price">$4.94</h2>
-                            <h3 class="product__name">Manggarai Coffee</h3>
-                            <p class="product__desciption">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi, animi incidunt cupiditate nemo dolores architecto.
-                            </p>
-    
-                            <button class="button product__button"><i class='bx bxs-shopping-bag'></i></button>
-                        </div>
-                    </article>
-                    <article class="product__card robusta all">
-                        <div class="product__shape">
-                            <img src="asset/product6.jpg" alt="" class="product__img">
-                        </div>
-                        <div class="product__data">
-                            <h2 class="product__price">$5.24</h2>
-                            <h3 class="product__name">Bali Coffee</h3>
-    
-                            <button class="button product__button"><i class='bx bxs-shopping-bag'></i></button>
-                        </div>
-                    </article>
-    
-                    <!-- LUWAK COFFEE -->
-                    <article class="product__card luwak all">
-                        <div class="product__shape">
-                            <img src="asset/product7.jpg" alt="" class="product__img">
-                        </div>
-                        <div class="product__data">
-                            <h2 class="product__price">$12</h2>
-                            <h3 class="product__name">Sumatran Luwak Coffee</h3>
-    
-                            <button class="button product__button"><i class='bx bxs-shopping-bag'></i></button>
-                        </div>
-                    </article>
-                    <article class="product__card luwak all">
-                        <div class="product__shape">
-                            <img src="asset/product8.jpg" alt="" class="product__img">
-                        </div>
-                        <div class="product__data">
-                            <h2 class="product__price">$19</h2>
-                            <h3 class="product__name">Java Luwak Coffee</h3>
-    
-                            <button class="button product__button"><i class='bx bxs-shopping-bag'></i></button>
-                        </div>
-                    </article>
-                    <article class="product__card luwak all">
-                        <div class="product__shape">
-                            <img src="asset/product9.jpg" alt="" class="product__img">
-                        </div>
-                        <div class="product__data">
-                            <h2 class="product__price">$16</h2>
-                            <h3 class="product__name">Bali Luwak Coffee</h3>
-    
-                            <button class="button product__button"><i class='bx bxs-shopping-bag'></i></button>
-                        </div>
-                    </article>
-                    
-    
+                    <!-- Template Alpine JS -->
+                    <template x-for="(item, index) in items" x-key="index">
+                        <article :class="`product__card ${item.category} all`">
+                            <div class="product__shape">
+                                <img :src="`${item.img}`" :alt="item.name" class="product__img">
+                            </div>
+                            <div class="product__data">
+                                <h2 class="product__price" x-text="item.price">$5</h2>
+                                <h3 class="product__name" x-text="item.name"></h3>
+        
+                                <button class="button product__button">
+                                    <i class='bx bxs-shopping-bag'></i>
+                                </button>
+                            </div>
+                        </article>
+                    </template>
                 </div>
             </div>
         </section>
     
-            <!--Section CAFE SHOP -->
+            <!--Section About -->
         <section class="about section" id="about">
             <div class="about__container container">
                 <h2 class="section__title">
@@ -413,10 +316,13 @@
 
     <div class="cart">
         <div class="cart__content">
-
-            <h1 class="cart__tittle">
-                CART
-            </h1>
+            <div class="cart__title">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" style="fill: hsl(206, 12%, 12%);">
+                    <path d="M5 22h14a2 2 0 0 0 2-2V9a1 1 0 0 0-1-1h-3v-.777c0-2.609-1.903-4.945-4.5-5.198A5.005 5.005 0 0 0 7 7v1H4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2zm12-12v2h-2v-2h2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-2 3h2v2H7v-2z"></path>
+                </svg>
+                <h1>CART</h1>
+            </div>
             <ul class="cart__data">
                 
                 <li class="cart__list">
@@ -451,18 +357,26 @@
                             <button class="cart__qty-btn">+</button>
                         </div>
                         <span class="cart__list-price">RP 15.000</span>
+                        
                     </div>
                 </li>
                 
             </ul>
 
             <h3 class="cart__total">Total: <br> <span>RP 30.000,-</span></h3>
-            <button class="cart__button button">
-                Check Out
-            </button>
+
+            <div class="cart__button">
+                <button class="cart__checkout button">
+                    Check Out
+                </button>
+                <button class="cart__close button">
+                    <i class='bx bx-arrow-back'></i>
+                    Back 
+                </button>
+            </div>
         </div>
     </div>
-
+    <script src="src/app.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

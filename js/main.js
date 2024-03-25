@@ -10,6 +10,9 @@ if(navToggle){
     })
 }
 
+
+
+
 /* Menu hidden */
 if(navClose){
     navClose.addEventListener('click', () =>{
@@ -19,6 +22,23 @@ if(navClose){
 
 const navLink = document.querySelectorAll('.nav__link')
 
+/*===== Cart =====*/
+
+const cart = document.querySelector('.cart')
+
+const cartToggle= document.querySelector('.nav__toggle-cart').addEventListener('click', () =>{
+    cart.classList.add('show-menu')
+})
+
+const cartToggleLi= document.querySelector('.nav__toggle-cart-li').addEventListener('click', () =>{
+    cart.classList.add('show-menu')
+})
+
+const cartClose = document.querySelector('.cart__close').addEventListener('click', () =>{
+    cart.classList.remove('show-menu')
+})
+
+/*===== REMOVE MENU MOBILE =====*/
 const linkAction = () =>{
     const navMenu = document.getElementById('nav-menu')
     // When we click on each nav__link, we remove the show-menu class
