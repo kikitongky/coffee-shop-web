@@ -10,371 +10,441 @@
     <!-- BOXICON -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
 
     <!-- MYCSS -->
     <link rel="stylesheet" href="css/style.css" />
     <!-- AlpineJS -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <title>CoffeeDist</title>
   </head>
   <body>
-
     <!-- HEADER -->
     <header class="header" id="header">
-      <nav class="nav container">
+      <nav class="nav container" x-data>
         <a href="#" class="nav__logo">
           <img src="asset/coffee-icon.png" class="nav__logo-img" />
           CoffeeDist
         </a>
         <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list">
-                <li class="nav__item">
-                    <a href="#home" class="nav__link active-link">Home</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#product" class="nav__link">Product</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#about" class="nav__link">About Us</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#footer" class="nav__link">Contact Us</a>
-                </li>
-                <div class="nav__toggle-cart-li" id="nav-toggle-cart">
-                    <i class='bx bx-cart'></i>
-                </div>
-            </ul>
-            
-            <div class="nav__close" id="nav-close">
-                <i class='bx bx-x'></i>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active-link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#product" class="nav__link">Product</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About Us</a>
+            </li>
+            <li class="nav__item">
+              <a href="#footer" class="nav__link">Contact Us</a>
+            </li>
+            <div class="nav__toggle-cart-li" id="nav-toggle-cart">
+              <span
+                class="quantity__badge-li"
+                x-show="$store.cart.quantity"
+                x-text="$store.cart.quantity"
+              ></span>
+              <i class="bx bx-cart"></i>
             </div>
+          </ul>
+
+          <div class="nav__close" id="nav-close">
+            <i class="bx bx-x"></i>
+          </div>
         </div>
 
-        <!-- Nav Toggle --> 
-        
-        <div class="nav__toggle">
-            <div class="nav__toggle-cart" id="nav-toggle-cart">
-                <i class='bx bx-cart'></i>
-            </div>
+        <!-- Nav Toggle -->
 
-            <div class="nav__toggle-menu" id="nav-toggle-menu" >
-                <i class='bx bx-grid-alt'></i>
-            </div>
-           
+        <div class="nav__toggle">
+          <div class="nav__toggle-cart" id="nav-toggle-cart">
+            <i class="bx bx-cart"></i>
+            <span
+              class="quantity__badge"
+              x-show="$store.cart.quantity"
+              x-text="$store.cart.quantity"
+            ></span>
+          </div>
+
+          <div class="nav__toggle-menu" id="nav-toggle-menu">
+            <i class="bx bx-grid-alt"></i>
+          </div>
         </div>
       </nav>
     </header>
 
     <!-- MAIN  -->
     <main>
-            <!--Section HOME  -->
-        <section class="home grid" id="home">
-            <div class="home__container">
-                <div class="home__content container">
-                    <h1 class="home__title">
-                        Explore <span>Coffee Excelence</span> with Experience Distributors<span>.</span>
-                    </h1>
-                    <p class="home__description">Direct from <span>Indonesian farms</span>, for the best <span>Indonesian coffee beans</span></p>
-    
-                    <div class="div home__data">
-                        <div class="home__data-group">
-                            <h2 class="home__data-number">+500</h2>
-                            <h3 class="home__data-title">Testimonials</h3>
-                            <p class="home__data-description">
-                                Testimonials from various customer who trust us.
-                            </p>
-                        </div>
-                        
-                        <div class="home__data-group">
-                            <h2 class="home__data-number">+12</h2>
-                            <h3 class="home__data-title">Years Experience</h3>
-                            <p class="home__data-description">
-                                Experienced in finding the best coffee beans
-                            </p>
-                        </div>
-                        
-                    </div>
-    
-                    <a href="#speciality">
-                        <img src="asset/scroll.png" alt="" class="home__scroll">
-                    </a>
-    
-                </div>
-            </div>
-            <img src="asset/heroBG.jpg" alt="" class="home__img">
-        </section>
-            <!--Section SPECIALITY -->
-        <div class="speciality section container" id="speciality">
-            <div class="speciality container">
-                <div class="speciality__box">
-                    <h2 class="section__title section__title-speciality">
-                        Prime Beans, Prime Delivery: Your Coffee's Finest Journey!
-                    </h2>
-                    <!-- <a href="#" class="button speciality__button">See more</a> -->
-                </div>
-                <div class="speciality__category">
-                    <div class="speciality__group speciality__line">
-                        <img src="asset/speciality-coffee-beans.png" alt="" class="speciality__img">
-                        <h3 class="speciality__title">Selected Coffee</h3>
-                        <p class="speciality__description">
-                            Provides selected Indonesian coffee beans
-                        </p>
-                    </div>
-    
-                    <div class="speciality__group speciality__line">
-                        <img src="asset/speciality-coffee-cup.png" alt="" class="speciality__img">
-                        <h3 class="speciality__title">Experienced of Collaborating</h3>
-                        <p class="speciality__description">
-                            Has collaborated with thousands of coffee outlets
-                        </p>
-                    </div>
-    
-                    <div class="speciality__group">
-                        <img src="asset/speciality-delivery.png" alt="" class="speciality__img">
-                        <h3 class="speciality__title">On Time Delivery</h3>
-                        <p class="speciality__description">
-                            Reliable on-time delivery guaranted
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-            
-            <!--Section PRODUCT -->
-        <section class="product section" id="product" x-data="products">
-            <div class="product__container container">
-                <h2 class="section__title">
-                    Chose our delicious and best product.
-                </h2>
-    
-                <ul class="product__filters">
-                    <li class="product__item product__line" data-category="arabica">
-                        <h3 class="product__title">
-                            Arabica
-                        </h3>                    
-                        <span class="product__stock">3 product</span>
-                    </li>
-                    <li class="product__item product__line" data-category="robusta">
-                        <h3 class="product__title">
-                            Robusta
-                        </h3>                    
-                        <span class="product__stock">3 product</span>
-                    </li>
-                    <li class="product__item product__line" data-category="luwak">
-                        <h3 class="product__title">
-                            Luwak
-                        </h3>                    
-                        <span class="product__stock">3 product</span>
-                    </li>
-                    <li class="product__item product__line active__product" data-category="all">
-                        <h3 class="product__title">
-                            All Menu
-                        </h3>                    
-                        <span class="product__stock">9 product</span>
-                    </li>
-                </ul>
-    
-                <div class="product__content grid">
-                    <!-- Template Alpine JS -->
-                    <template x-for="(item, index) in items" x-key="index">
-                        <article :class="`product__card ${item.category} all`">
-                            <div class="product__shape">
-                                <img :src="`${item.img}`" :alt="item.name" class="product__img">
-                            </div>
-                            <div class="product__data">
-                                <h2 class="product__price" x-text="item.price">$5</h2>
-                                <h3 class="product__name" x-text="item.name"></h3>
-        
-                                <button class="button product__button">
-                                    <i class='bx bxs-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-                    </template>
-                </div>
-            </div>
-        </section>
-    
-            <!--Section About -->
-        <section class="about section" id="about">
-            <div class="about__container container">
-                <h2 class="section__title">
-                    Empowerment programs - Our contributted to Indonesian coffee industry 
-                </h2>
-    
-                <div class="about__content grid">
-                    <div class="about__images">
-                        <img src="asset/about.jpg" alt="" class="about__img-big">
-                        <img src="asset/about-sm.jpg" alt="" class="about__img-small">
-                    </div>
-    
-                    <div class="about__data">
-                        <h1 class="about__title">Indo CoffeeDist</h1>
-                        <span class="about__subtitle">"Empowerment is not about giving people power. it's about unleashing the power they already have within them."</span>
-                        <p class="about__description">
-                            <span>Our mission</span> is being a premier distributor of Indonesian coffee, with committed to bringing you the finest coffee beans more than just a delicious flavor. By prioritizing direct relationships with farmers, we not only provide the highest quality coffee beans but also strengthen local coffee farming communities. <br><br>
+      <!--Section HOME  -->
+      <section class="home grid" id="home">
+        <div class="home__container">
+          <div class="home__content container">
+            <h1 class="home__title">
+              Explore <span>Coffee Excelence</span> with Experience
+              Distributors<span>.</span>
+            </h1>
+            <p class="home__description">
+              Direct from <span>Indonesian farms</span>, for the best
+              <span>Indonesian coffee beans</span>
+            </p>
 
-                            Moreover, we open doors for coffee entrepreneurs and baristas to thrive through innovative scholarship and industry development programs. Just because we aim to not only deliver exceptional coffee, but also contribute to the growth and sustainability of the Indonesian coffee industry and uplift local communities. Everyone can join our program!  
-                        </p>
-    
-                        <div class="about__buttons">
-                            <a href="mailto:coffe-dist@example.com" class="about__button-contact button">
-                                Contact Us
-                                <i class='bx bxs-envelope'></i>
-                            </a>
-    
-                            <a href="#product" class="about__button">
-                                Read more
-                                <i class='bx bx-right-arrow-alt'></i>
-                            </a>
-                        </div>
-                    </div>
+            <div class="div home__data">
+              <div class="home__data-group">
+                <h2 class="home__data-number">+500</h2>
+                <h3 class="home__data-title">Testimonials</h3>
+                <p class="home__data-description">
+                  Testimonials from various customer who trust us.
+                </p>
+              </div>
+
+              <div class="home__data-group">
+                <h2 class="home__data-number">+12</h2>
+                <h3 class="home__data-title">Years Experience</h3>
+                <p class="home__data-description">
+                  Experienced in finding the best coffee beans
+                </p>
+              </div>
+            </div>
+
+            <a href="#speciality">
+              <img src="asset/scroll.png" alt="" class="home__scroll" />
+            </a>
+          </div>
+        </div>
+        <img src="asset/heroBG.jpg" alt="" class="home__img" />
+      </section>
+      <!--Section SPECIALITY -->
+      <div class="speciality section container" id="speciality">
+        <div class="speciality container">
+          <div class="speciality__box">
+            <h2 class="section__title section__title-speciality">
+              Prime Beans, Prime Delivery: Your Coffee's Finest Journey!
+            </h2>
+            <!-- <a href="#" class="button speciality__button">See more</a> -->
+          </div>
+          <div class="speciality__category">
+            <div class="speciality__group speciality__line">
+              <img
+                src="asset/speciality-coffee-beans.png"
+                alt=""
+                class="speciality__img"
+              />
+              <h3 class="speciality__title">Selected Coffee</h3>
+              <p class="speciality__description">
+                Provides selected Indonesian coffee beans
+              </p>
+            </div>
+
+            <div class="speciality__group speciality__line">
+              <img
+                src="asset/speciality-coffee-cup.png"
+                alt=""
+                class="speciality__img"
+              />
+              <h3 class="speciality__title">Experienced of Collaborating</h3>
+              <p class="speciality__description">
+                Has collaborated with thousands of coffee outlets
+              </p>
+            </div>
+
+            <div class="speciality__group">
+              <img
+                src="asset/speciality-delivery.png"
+                alt=""
+                class="speciality__img"
+              />
+              <h3 class="speciality__title">On Time Delivery</h3>
+              <p class="speciality__description">
+                Reliable on-time delivery guaranted
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Section PRODUCT -->
+      <section class="product section" id="product" x-data="products">
+        <div class="product__container container">
+          <h2 class="section__title">Chose our delicious and best product.</h2>
+
+          <ul class="product__filters">
+            <li class="product__item product__line" data-category="arabica">
+              <h3 class="product__title">Arabica</h3>
+              <span class="product__stock">3 product</span>
+            </li>
+            <li class="product__item product__line" data-category="robusta">
+              <h3 class="product__title">Robusta</h3>
+              <span class="product__stock">3 product</span>
+            </li>
+            <li class="product__item product__line" data-category="luwak">
+              <h3 class="product__title">Luwak</h3>
+              <span class="product__stock">3 product</span>
+            </li>
+            <li
+              class="product__item product__line active__product"
+              data-category="all"
+            >
+              <h3 class="product__title">All Menu</h3>
+              <span class="product__stock">9 product</span>
+            </li>
+          </ul>
+
+          <div class="product__content grid">
+            <!-- Template Alpine JS -->
+            <template x-for="(item, index) in items" x-key="index">
+              <article :class="`product__card ${item.category} all`">
+                <div class="product__shape">
+                  <img
+                    :src="`${item.img}`"
+                    :alt="item.name"
+                    class="product__img"
+                  />
                 </div>
+                <div class="product__data">
+                  <h2 class="product__price" x-text="rupiah(item.price)"></h2>
+                  <h3 class="product__name" x-text="item.name"></h3>
+
+                  <button
+                    class="button product__button"
+                    @click="$store.cart.add(item)"
+                  >
+                    <i class="bx bxs-shopping-bag"></i>
+                  </button>
+                </div>
+              </article>
+            </template>
+          </div>
+        </div>
+      </section>
+
+      <!--Section About -->
+      <section class="about section" id="about">
+        <div class="about__container container">
+          <h2 class="section__title">
+            Empowerment programs - Our contributted to Indonesian coffee
+            industry
+          </h2>
+
+          <div class="about__content grid">
+            <div class="about__images">
+              <img src="asset/about.jpg" alt="" class="about__img-big" />
+              <img src="asset/about-sm.jpg" alt="" class="about__img-small" />
             </div>
-        </section>
-    
-            <!--Section LOGO -->
-        <section class="logo section">
-            <!-- <h3 class="section__title container grid">Available Payment</h3> -->
-            <div class="logo__container container grid">
-                <img src="asset/logo3.png" alt="" class="logo__img">
-                <img src="asset/logo2.png" alt="" class="logo__img">
-                <img src="asset/logo1.png" alt="" class="logo__img">
+
+            <div class="about__data">
+              <h1 class="about__title">Indo CoffeeDist</h1>
+              <span class="about__subtitle"
+                >"Empowerment is not about giving people power. it's about
+                unleashing the power they already have within them."</span
+              >
+              <p class="about__description">
+                <span>Our mission</span> is being a premier distributor of
+                Indonesian coffee, with committed to bringing you the finest
+                coffee beans more than just a delicious flavor. By prioritizing
+                direct relationships with farmers, we not only provide the
+                highest quality coffee beans but also strengthen local coffee
+                farming communities. <br /><br />
+
+                Moreover, we open doors for coffee entrepreneurs and baristas to
+                thrive through innovative scholarship and industry development
+                programs. Just because we aim to not only deliver exceptional
+                coffee, but also contribute to the growth and sustainability of
+                the Indonesian coffee industry and uplift local communities.
+                Everyone can join our program!
+              </p>
+
+              <div class="about__buttons">
+                <a
+                  href="mailto:coffe-dist@example.com"
+                  class="about__button-contact button"
+                >
+                  Contact Us
+                  <i class="bx bxs-envelope"></i>
+                </a>
+
+                <a href="#product" class="about__button">
+                  Read more
+                  <i class="bx bx-right-arrow-alt"></i>
+                </a>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
+
+      <!--Section LOGO -->
+      <section class="logo section">
+        <!-- <h3 class="section__title container grid">Available Payment</h3> -->
+        <div class="logo__container container grid">
+          <img src="asset/logo3.png" alt="" class="logo__img" />
+          <img src="asset/logo2.png" alt="" class="logo__img" />
+          <img src="asset/logo1.png" alt="" class="logo__img" />
+        </div>
+      </section>
     </main>
-    
+
     <!-- FOOTER -->
     <footer class="footer" id="footer">
-        <div class="footer__container container">
-            
-            <h1 class="footer__title"><img src="asset/coffee-icon.png" alt="" class="footer__icon">CoffeeDist</h1>
+      <div class="footer__container container">
+        <h1 class="footer__title">
+          <img
+            src="asset/coffee-icon.png"
+            alt=""
+            class="footer__icon"
+          />CoffeeDist
+        </h1>
 
-            <div class="footer__content grid">
-
-                <div class="footer__data">
-                    <p class="footer__description">
-                        Have an intersted industry of coffee? <br> Subscribe to get info our program
-                    </p>
-                    <div class="footer__newsletter">
-                        <input type="email" placeholder="Your email address" class="footer__input">
-                        <button class="footer__button">
-                            <i class='bx bx-right-arrow-alt'></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="footer__data">
-                    <h2 class="footer__subtitle">Address</h2>
-                    <p class="footer__information">
-                        7th Sahari Street <br>
-                        Central Jakarta, Indonesia. 
-                    </p>
-                </div>
-
-                <div class="footer__data">
-                    <h2 class="footer__subtitle">Contact Us</h2>
-                    <p class="footer__information">
-                        +62 855-1234-1234 <br>
-                        coffee-dist@gmail.com
-                    </p>
-                </div>
-
-                <div class="footer__data">
-                    <h2 class="footer__subtitle">Open</h2>
-                    <p class="footer__information">
-                        Monday - Saturday <br>
-                        06:00 AM - 10:00 PM
-                    </p>
-                </div>
+        <div class="footer__content grid">
+          <div class="footer__data">
+            <p class="footer__description">
+              Have an intersted industry of coffee? <br />
+              Subscribe to get info our program
+            </p>
+            <div class="footer__newsletter">
+              <input
+                type="email"
+                placeholder="Your email address"
+                class="footer__input"
+              />
+              <button class="footer__button">
+                <i class="bx bx-right-arrow-alt"></i>
+              </button>
             </div>
+          </div>
 
-            <div class="footer__group">
-                <ul class="footer__social">
-                    <a href="#" target="_blank" class="footer__social-link">
-                        <i class='bx bxl-instagram'></i>
-                    </a>
-                    <a href="#" target="_blank" class="footer__social-link">
-                        <i class='bx bxl-facebook'></i>
-                    </a>
-                    <a href="#" target="_blank" class="footer__social-link">
-                        <i class='bx bxl-gmail'></i>
-                    </a>
-                </ul>
-                <span class="footer__copy">
-                    &#169;2024 | Created by <a href="#" target="_blank">Tongky</a>
-                </span>
-            </div>
+          <div class="footer__data">
+            <h2 class="footer__subtitle">Address</h2>
+            <p class="footer__information">
+              7th Sahari Street <br />
+              Central Jakarta, Indonesia.
+            </p>
+          </div>
+
+          <div class="footer__data">
+            <h2 class="footer__subtitle">Contact Us</h2>
+            <p class="footer__information">
+              +62 855-1234-1234 <br />
+              coffee-dist@gmail.com
+            </p>
+          </div>
+
+          <div class="footer__data">
+            <h2 class="footer__subtitle">Open</h2>
+            <p class="footer__information">
+              Monday - Saturday <br />
+              06:00 AM - 10:00 PM
+            </p>
+          </div>
         </div>
+
+        <div class="footer__group">
+          <ul class="footer__social">
+            <a href="#" target="_blank" class="footer__social-link">
+              <i class="bx bxl-instagram"></i>
+            </a>
+            <a href="#" target="_blank" class="footer__social-link">
+              <i class="bx bxl-facebook"></i>
+            </a>
+            <a href="#" target="_blank" class="footer__social-link">
+              <i class="bx bxl-gmail"></i>
+            </a>
+          </ul>
+          <span class="footer__copy">
+            &#169;2024 | <a href="#" target="_blank">Tongky</a>
+          </span>
+        </div>
+      </div>
     </footer>
 
     <!-- scroll up -->
     <a href="#" class="scrollup" id="scroll-up">
-        <i class='bx bxs-up-arrow-alt'></i>
+      <i class="bx bxs-up-arrow-alt"></i>
     </a>
 
-    <div class="cart">
-        <div class="cart__content">
-            <div class="cart__title">
-                
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" style="fill: hsl(206, 12%, 12%);">
-                    <path d="M5 22h14a2 2 0 0 0 2-2V9a1 1 0 0 0-1-1h-3v-.777c0-2.609-1.903-4.945-4.5-5.198A5.005 5.005 0 0 0 7 7v1H4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2zm12-12v2h-2v-2h2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-2 3h2v2H7v-2z"></path>
-                </svg>
-                <h1>CART</h1>
-            </div>
-            <ul class="cart__data">
-                
-                <li class="cart__list">
-                    <div class="cart__list-img">
-                        <img src="asset/product1.jpg" />
-                    </div>
-
-                    <div class="cart__list-data">
-                        <h3 class="cart__list-name">
-                            Coffee Beans
-                        </h3>
-                        <div class="cart__list-qty">
-                            <button class="cart__qty-btn">-</button>
-                            <span>X 1</span>
-                            <button class="cart__qty-btn">+</button>
-                        </div>
-                        <span class="cart__list-price">RP 15.000</span>
-                    </div>
-                </li>
-                <li class="cart__list">
-                    <div class="cart__list-img">
-                        <img src="asset/product1.jpg" />
-                    </div>
-
-                    <div class="cart__list-data">
-                        <h3 class="cart__list-name">
-                            Coffee Beans
-                        </h3>
-                        <div class="cart__list-qty">
-                            <button class="cart__qty-btn">-</button>
-                            <span>X 1</span>
-                            <button class="cart__qty-btn">+</button>
-                        </div>
-                        <span class="cart__list-price">RP 15.000</span>
-                        
-                    </div>
-                </li>
-                
-            </ul>
-
-            <h3 class="cart__total">Total: <br> <span>RP 30.000,-</span></h3>
-
-            <div class="cart__button">
-                <button class="cart__checkout button">
-                    Check Out
-                </button>
-                <button class="cart__close button">
-                    <i class='bx bx-arrow-back'></i>
-                    Back 
-                </button>
-            </div>
+    <div class="cart" x-data>
+      <div class="cart__content">
+        <div class="cart__title">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            style="fill: hsl(206, 12%, 12%)"
+          >
+            <path
+              d="M5 22h14a2 2 0 0 0 2-2V9a1 1 0 0 0-1-1h-3v-.777c0-2.609-1.903-4.945-4.5-5.198A5.005 5.005 0 0 0 7 7v1H4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2zm12-12v2h-2v-2h2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-2 3h2v2H7v-2z"
+            ></path>
+          </svg>
+          <h1>CART</h1>
         </div>
+
+        <ul class="cart__data">
+          <template x-for="(item, index) in $store.cart.items" x-key="index">
+            <li class="cart__list">
+              <div class="cart__list-img">
+                <img :src="`${item.img}`" />
+              </div>
+              <div class="cart__list-data">
+                <h3 class="cart__list-name" x-text="item.name"></h3>
+                <div class="cart__list-qty">
+                  <button
+                    class="cart__qty-btn"
+                    id="remove"
+                    @click="$store.cart.remove(item.id)"
+                  >
+                    &minus;
+                  </button>
+                  <span x-text="item.quantity">&times; 1</span>
+                  <button
+                    class="cart__qty-btn"
+                    id="add"
+                    @click="$store.cart.add(item)"
+                  >
+                    &plus;
+                  </button>
+                </div>
+                <div class="cart__price">
+                  <span
+                    class="cart__list-price"
+                    x-text="rupiah(item.price)"
+                  ></span>
+                  &equals;
+                  <span class="cart__list-total" x-text="rupiah(item.total)"
+                    >RP 30.000</span
+                  >
+                </div>
+              </div>
+            </li>
+          </template>
+        </ul>
+
+        <h2 class="cart__empty" x-show="$store.cart.items.length === 0">
+          Cart is Empty &#128577;
+        </h2>
+
+        <h3 class="cart__total" x-show="$store.cart.items.length >= 1">
+          Total: <br />
+          <span x-text="rupiah($store.cart.total)">RP 30.000,-</span>
+        </h3>
+
+        <div class="cart__button">
+          <button
+            class="cart__checkout button"
+            x-show="$store.cart.items.length >= 1"
+          >
+            Checkout
+          </button>
+          <button class="cart__close button">
+            <i class="bx bx-arrow-back"></i>
+            Back
+          </button>
+        </div>
+      </div>
     </div>
     <script src="src/app.js"></script>
     <script src="js/main.js"></script>
